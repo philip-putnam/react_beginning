@@ -15,22 +15,22 @@ In terminal type:
 
 ## Process:
 
-cd project-name
-npm init
-npm i -S react
-npm i -S react-dom
-npm i --save-dev babel-core babel-loader babel-preset-react (npm i -D babel-core)
-touch .babelrc
-.babelrc > { presets: ['react'] }
-npm i -D webpack webpack-dev-server html-webpack-plugin
-touch webpack.config.js
-mkdir app
-cd app
-touch index.html
-touch index.js
-mkdir components
-cd components
-touch App.js
+1. cd project-name
+2. npm init
+3. npm i -S react
+4. npm i -S react-dom
+5. npm i --save-dev babel-core babel-loader babel-preset-react (npm i -D babel-core)
+6. touch .babelrc
+7. .babelrc > { presets: ['react'] }
+8. npm i -D webpack webpack-dev-server html-webpack-plugin
+9. touch webpack.config.js
+10. mkdir app
+11. cd app
+12. touch index.html
+13. touch index.js
+14. mkdir components
+15. cd components
+16. touch App.js
 
 ### MIT License
 
