@@ -1,23 +1,24 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 
-var PLAYERS = [
-  {
-    name: "Jim Hoskins",
-    score: 31,
-  },
-  {
-    name: "Philip Putnam",
-    score: 999,
-  },
-  {
-    name: "Andre the Giant",
-    score: 995,
-  },
-  {
-    name: "Jilian Anderson",
-    score: 996,
-  },
-]
+// var PLAYERS = [
+//   {
+//     name: "Jim Hoskins",
+//     score: 31,
+//   },
+//   {
+//     name: "Philip Putnam",
+//     score: 999,
+//   },
+//   {
+//     name: "Andre the Giant",
+//     score: 995,
+//   },
+//   {
+//     name: "Jilian Anderson",
+//     score: 996,
+//   },
+// ]
 
 function Header(props) {
   return (
@@ -72,8 +73,9 @@ function Application(props) {
     <Header title={props.title} />
 
       <div className='players'>
-        <Player name='Jim Hoskins' score={31}/>
-        <Player name='Philip Putnam' score={900}/>
+        {props.players.map(function(player) {
+          return <Player name={player.name} score={player.score} />
+        })}
       </div>
 
     </div>
@@ -82,6 +84,10 @@ function Application(props) {
 
 Application.propTypes = {
   title: React.PropTypes.string,
+  players: React.PropTypes.arrayOf(React.PropTypes.shape({
+    name: React.PropTypes.string.isRequired,
+    score: React.PropTypes.number.isRequired,
+  })).isRequired,
 };
 
 Application.defaultProps = {
@@ -96,3 +102,8 @@ Application.defaultProps = {
 // }
 
 module.exports = Application;
+
+// ReactDOM.render(
+//   <Application players={PLAYERS} />,
+//   document.getElementById('app')
+// );
