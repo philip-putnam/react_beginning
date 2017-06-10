@@ -2,6 +2,17 @@
 
 ### Author: Philip Putnam
 
+## Description
+
+Following along with the React Basics Treehouse course (by: Jim Hoskins), this program builds a scoreboard with the ability to add players, add/subtract points to player's score, calculate/display a total score, as well as provide a working stopwatch.
+
+## Screenshots
+
+#### 06/10/2017
+![alt text](http://raw.githubusercontent.com/philip-putnam/react_beginning/master/react_scoreboard.png)
+
+
+
 ## Instructions:
 
 In terminal type:
@@ -31,6 +42,23 @@ In terminal type:
 14. mkdir components
 15. cd components
 16. touch App.js
+
+## Technologies:
+
+1. Node Packet Manager (NPM)
+2. Babel
+3. Webpack
+4. React (JavaScript)
+5. HTML, CSS
+
+The style sheet was downloaded from Treehouse, all credits go to them and Jim Hoskins for a good set of videos!
+
+## To-do:
+
+#### As of 07/10/17 there are two console warnings:
+
+1. PropTypes being called from the main React package, need to install prop-types package
+2. createClass is deprecated, I believe with ES6, need to utilize new class syntax.
 
 ### MIT License
 
