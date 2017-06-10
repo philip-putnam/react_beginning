@@ -71,6 +71,8 @@ var Application = React.createClass({
 
   onScoreChange: function(index, delta) {
     console.log('onScoreChange', index, delta);
+    this.state.players[index].score += delta;
+    this.setState(this.state);
   },
 
   render: function() {
