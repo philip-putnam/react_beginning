@@ -6,18 +6,22 @@ var PLAYERS = [
   {
     name: "Jim Hoskins",
     score: 31,
+    id: 1,
   },
   {
     name: "Philip Putnam",
     score: 999,
+    id: 2,
   },
   {
     name: "Andre the Giant",
     score: 995,
+    id: 3,
   },
   {
     name: "Jilian Anderson",
     score: 996,
+    id: 4,
   },
 ]
 
