@@ -1,6 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+var nextId = 5;
+
 var AddPlayerForm = React.createClass({
   propTypes: {
     onAdd: React.PropTypes.func.isRequired,
@@ -13,13 +15,15 @@ var AddPlayerForm = React.createClass({
   },
 
   onNameChange: function(e) {
-    console.log('onNameChange', e.target.value);
+    // console.log('onNameChange', e.target.value);
+    this.setState({name: e.target.value});
   },
 
   onSubmit: function(e) {
     e.preventDefault();
 
-    //this.props.onAdd();
+    this.props.onAdd(this.state.name);
+    this.setState({name: ""});
   },
 
   render: function() {
@@ -136,6 +140,17 @@ var Application = React.createClass({
     this.setState(this.state);
   },
 
+  onPlayerAdd: function(name) {
+    console.log('Player Name: ', name);
+    this.state.players.push({
+      name: name,
+      score: 0,
+      id: nextId,
+    });
+    this.setState(this.state);
+    nextId += 1;
+  },
+
   render: function() {
     return (
       <div className='scoreboard'>
@@ -152,7 +167,7 @@ var Application = React.createClass({
             );
           }.bind(this))}
         </div>
-        <AddPlayerForm />
+        <AddPlayerForm onAdd={this.onPlayerAdd} />
       </div>
     );
   }
