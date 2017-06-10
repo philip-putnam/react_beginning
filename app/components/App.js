@@ -7,6 +7,8 @@ var Stopwatch = React.createClass({
   getInitialState: function() {
     return {
       running: false,
+      elapsedTime: 0,
+      previousTime: 0,
     }
   },
 
@@ -19,11 +21,21 @@ var Stopwatch = React.createClass({
   },
 
   onTick: function() {
+    if (this.state.running) {
+      var now = Date.now();
+      this.setState({
+        previousTime: now,
+        elapsedTime: this.state.elapsedTime + (now - this.state.previousTime),
+      });
+    }
     console.log('onTick');
   },
 
   onStart: function() {
-    this.setState({ running: true });
+    this.setState({
+      running: true,
+      previousTime: Date.now(),
+    });
   },
 
   onStop: function() {
