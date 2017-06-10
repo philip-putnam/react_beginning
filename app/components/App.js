@@ -1,25 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-// var PLAYERS = [
-//   {
-//     name: "Jim Hoskins",
-//     score: 31,
-//   },
-//   {
-//     name: "Philip Putnam",
-//     score: 999,
-//   },
-//   {
-//     name: "Andre the Giant",
-//     score: 995,
-//   },
-//   {
-//     name: "Jilian Anderson",
-//     score: 996,
-//   },
-// ]
-
 function Header(props) {
   return (
     <div className='header'>
@@ -32,15 +13,17 @@ Header.propTypes = {
   title: React.PropTypes.string.isRequired,
 };
 
-function Counter(props) {
-  return (
-    <div className='counter'>
-      <button className='counter-action decrement'> - </button>
-      <div className='counter-score'> {props.score} </div>
-      <button className='counter-action increment'> + </button>
-    </div>
-  );
-}
+var Counter = React.createClass({
+  render: function() {
+    return (
+      <div className='counter'>
+        <button className='counter-action decrement'> - </button>
+        <div className='counter-score'> {this.props.score} </div>
+        <button className='counter-action increment'> + </button>
+      </div>
+    );
+  }
+});
 
 Counter.propTypes = {
   score: React.PropTypes.number.isRequired,
