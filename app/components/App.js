@@ -1,9 +1,27 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+function Stats(props) {
+  return (
+    <table className='stats'>
+      <tbody>
+        <tr>
+          <td>Players:</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Total Points:</td>
+          <td>123</td>
+        </tr>
+      </tbody>
+    </table>
+  )
+}
+
 function Header(props) {
   return (
     <div className='header'>
+      <Stats />
       <h1>{props.title}</h1>
     </div>
   );
