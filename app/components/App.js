@@ -10,6 +10,18 @@ var Stopwatch = React.createClass({
     }
   },
 
+  componentDidMount: function() {
+    this.interval = setInterval(this.onTick, 100);
+  },
+
+  componentWillUnmount: function() {
+    clearInterval(this.interval);
+  },
+
+  onTick: function() {
+    console.log('onTick');
+  },
+
   onStart: function() {
     this.setState({ running: true });
   },
@@ -19,7 +31,7 @@ var Stopwatch = React.createClass({
   },
 
   onReset: function() {
-    
+
   },
 
 
