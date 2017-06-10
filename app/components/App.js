@@ -1,6 +1,19 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+var AddPlayerForm = React.createClass({
+  render: function() {
+    return (
+      <div className='add-player-form'>
+        <form>
+          <input type='text' />
+          <input type='submit' value='add player' />
+        </form>
+      </div>
+    );
+  }
+});
+
 function Stats(props) {
   var totalPlayers = props.players.length;
   var totalPoints = props.players.reduce(function(total, player) {
@@ -119,7 +132,7 @@ var Application = React.createClass({
             );
           }.bind(this))}
         </div>
-
+        <AddPlayerForm />
       </div>
     );
   }
