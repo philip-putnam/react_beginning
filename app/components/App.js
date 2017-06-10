@@ -55,10 +55,12 @@ var Stopwatch = React.createClass({
     //   startStop = <button>Start</button>;
     // }
 
+    var seconds = Math.floor(this.state.elapsedTime / 1000);
+
     return (
       <div className='stopwatch'>
         <h2>Stopwatch</h2>
-        <div className='stopwatch-time'>0</div>
+        <div className='stopwatch-time'>{seconds}</div>
         { this.state.running ?
           <button onClick={this.onStop}>Stop</button>
           :
