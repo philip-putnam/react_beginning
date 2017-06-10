@@ -9,7 +9,7 @@ Following along with the React Basics Treehouse course (by: Jim Hoskins), this p
 ## Screenshots
 
 #### 06/10/2017
-![alt text](http://raw.githubusercontent.com/philip-putnam/react_beginning/master/react_scoreboard.png)
+![alt text](https://github.com/philip-putnam/react_beginning/blob/master/react_scoreboard.png)
 
 
 
