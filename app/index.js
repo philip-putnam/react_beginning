@@ -1,6 +1,10 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Application = require('./components/App');
+// var React = require('react');
+// var ReactDOM = require('react-dom');
+// var Application = require('./components/App');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Application from './components/App';
+
 
 var PLAYERS = [
   {
