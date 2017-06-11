@@ -1,4 +1,6 @@
-var HTMLWebpackPlugin = require('html-webpack-plugin');
+
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+// var HTMLWebpackPlugin = require('html-webpack-plugin');
 var HTMLWebpackPlugin = new HTMLWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
@@ -13,6 +15,9 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },{
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
       }
     ]
   },
