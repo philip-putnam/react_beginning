@@ -1,6 +1,5 @@
 
-import HTMLWebpackPlugin from 'html-webpack-plugin';
-// var HTMLWebpackPlugin = require('html-webpack-plugin');
+var HTMLWebpackPlugin = require('html-webpack-plugin');
 var HTMLWebpackPlugin = new HTMLWebpackPlugin({
   template: __dirname + '/app/index.html',
   filename: 'index.html',
