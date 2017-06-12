@@ -1,4 +1,5 @@
 import React from 'react';
+import Stopwatch from '../components/Stopwatch';
 
 const INITIAL_STATE = {
   players: [
