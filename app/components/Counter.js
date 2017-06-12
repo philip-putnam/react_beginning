@@ -11,8 +11,8 @@ const Counter = props => {
 }
 
 Counter.propTypes = {
-  score: React.PropTypes.number.isRequired,
-  onChange: React.PropTypes.func.isRequired,
+  score: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
 }
 
 export default Counter;
