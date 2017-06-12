@@ -1,10 +1,19 @@
 // libraries
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import PlayerReducer from './app/reducers/player';
 import Scoreboard from './containers/Scoreboard';
 import './css/style.css';
 
-ReactDOM.render(
-  <Scoreboard />,
+const store = createStore(
+  PlayerReducer
+);
+
+render(
+  <Provider store={store}>
+    <Scoreboard />
+  </Provider>,
   document.getElementById('app')
 );
