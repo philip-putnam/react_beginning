@@ -6,12 +6,12 @@
 
 Following along with the React Basics Treehouse course (by: Jim Hoskins), this program builds a scoreboard with the ability to add players, add/subtract points to player's score, calculate/display a total score, as well as provide a working stopwatch.
 
+Starting on 06/11/17 this application will have Redux! Continuing with Treehouse course and React track lessons, I will be building this site out with Redux following the 'Building Applications with React & Redux' with Guil Hernandez and Beau Palmquist.
+
 ## Screenshots
 
 #### 06/10/2017
 ![alt text](https://github.com/philip-putnam/react_beginning/blob/master/react_scoreboard.png)
-
-
 
 ## Instructions:
 
