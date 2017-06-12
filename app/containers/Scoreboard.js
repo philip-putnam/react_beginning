@@ -1,44 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from '../components/Header';
 import Player from '../components/Player';
 import AddPlayerForm from '../components/AddPlayerForm';
 
-const INITIAL_STATE = {
-  players: [
-    {
-      name: "Jim Hoskins",
-      score: 31,
-      id: 1,
-    },
-    {
-      name: "Philip Putnam",
-      score: 999,
-      id: 2,
-    },
-    {
-      name: "Andre the Giant",
-      score: 995,
-      id: 3,
-    },
-    {
-      name: "Jilian Anderson",
-      score: 996,
-      id: 4,
-    },
-  ],
-}
+export default class Scoreboard extends Component {
 
-const Scoreboard = React.createClass({
-  getInitialState: function() {
-    return INITIAL_STATE;
-  },
+  state = {
+    players: [
+      {
+        name: "Jim Hoskins",
+        score: 31,
+        id: 1,
+      },
+      {
+        name: "Philip Putnam",
+        score: 999,
+        id: 2,
+      },
+      {
+        name: "Andre the Giant",
+        score: 995,
+        id: 3,
+      },
+      {
+        name: "Jilian Anderson",
+        score: 996,
+        id: 4,
+      },
+    ],
+  };
 
-  onScoreChange: function(index, delta) {
+  onScoreChange = (index, delta) => {
     this.state.players[index].score += delta;
     this.setState(this.state);
-  },
+  };
 
-  onPlayerAdd: function(name) {
+  onPlayerAdd = (name) => {
     this.state.players.push({
       name: name,
       score: 0,
@@ -46,14 +43,14 @@ const Scoreboard = React.createClass({
     });
     this.setState(this.state);
     // nextId += 1;
-  },
+  };
 
-  onRemovePlayer: function(index) {
+  onRemovePlayer = (index) => {
     this.state.players.splice(index, 1);
     this.setState(this.state);
-  },
+  };
 
-  render: function() {
+  render() {
     return (
       <div className='scoreboard'>
         <Header players={this.state.players} />
@@ -73,6 +70,4 @@ const Scoreboard = React.createClass({
       </div>
     );
   }
-});
-
-export default Scoreboard;
+};
