@@ -39,10 +39,8 @@ export default class Scoreboard extends Component {
     this.state.players.push({
       name: name,
       score: 0,
-      // id: nextId,
     });
     this.setState(this.state);
-    // nextId += 1;
   };
 
   onRemovePlayer = (index) => {
