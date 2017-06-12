@@ -20,18 +20,18 @@ export default class Stopwatch extends Component {
       running: true,
       previousTime: Date.now(),
     });
-  },
+  };
 
   onStop = () => {
     this.setState({ running: false });
-  },
+  };
 
   onReset = () => {
     this.setState({
       elapsedTime: 0,
       previousTime: Date.now(),
     });
-  },
+  };
 
   onTick = () => {
     if (this.state.running) {
@@ -41,5 +41,22 @@ export default class Stopwatch extends Component {
         previousTime: Date.now(),
       });
     }
-  },
+  };
+
+  render() {
+    var seconds = Math.floor(this.state.elapsedTime / 1000);
+
+    return (
+      <div className='stopwatch'>
+        <h2>Stopwatch</h2>
+        <div className='stopwatch-time'>{seconds}</div>
+        { this.state.running ?
+          <button onClick={this.onStop}>Stop</button>
+          :
+          <button onClick={this.onStart}>Start</button>
+        }
+        <button onClick={this.onReset}>Reset</button>
+      </div>
+    )
+  }
 }
