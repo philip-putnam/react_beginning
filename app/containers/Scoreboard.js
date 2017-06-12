@@ -1,5 +1,7 @@
 import React from 'react';
 import Stopwatch from '../components/Stopwatch';
+import Counter from '../components/Counter';
+import Stats from '../components/Stats';
 
 const INITIAL_STATE = {
   players: [
@@ -87,32 +89,6 @@ Header.propTypes = {
   players: React.PropTypes.array.isRequired,
 };
 
-function Stats(props) {
-  const playerCount = props.players.length;
-  const totalPoints = props.players.reduce(function(total, player) {
-    return total + player.score;
-  }, 0);
-
-  return (
-    <table className='stats'>
-      <tbody>
-        <tr>
-          <td>Players:</td>
-          <td>{playerCount}</td>
-        </tr>
-        <tr>
-          <td>Total Points:</td>
-          <td>{totalPoints}</td>
-        </tr>
-      </tbody>
-    </table>
-  )
-}
-
-Stats.propTypes = {
-  players: React.PropTypes.array.isRequired,
-};
-
 function Player(props) {
   return (
     <div className='player'>
@@ -132,21 +108,6 @@ Player.propTypes = {
   score: React.PropTypes.number.isRequired,
   onScoreChange: React.PropTypes.func.isRequired,
   onRemove: React.PropTypes.func.isRequired,
-}
-
-function Counter(props) {
-  return (
-    <div className='counter'>
-      <button className='counter-action decrement' onClick={function() {props.onChange(-1);}}> - </button>
-      <div className='counter-score'> {props.score} </div>
-      <button className='counter-action increment' onClick={function() {props.onChange(1);}}> + </button>
-    </div>
-  );
-}
-
-Counter.propTypes = {
-  score: React.PropTypes.number.isRequired,
-  onChange: React.PropTypes.func.isRequired,
 }
 
 const AddPlayerForm = React.createClass({
