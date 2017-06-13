@@ -10,8 +10,11 @@ Starting on 06/11/17 this application will have Redux! Continuing with Treehouse
 
 ## Screenshots
 
-#### 06/10/2017
+#### 06/10/2017 - React Basic
 ![alt text](https://github.com/philip-putnam/react_beginning/blob/master/react_scoreboard.png)
+
+#### 06/12/2017 - Basic React + Redux, added select player feature
+![alt text](https://github.com/philip-putnam/react_beginning/blob/master/select_player_with_redux.png)
 
 ## Instructions:
 
